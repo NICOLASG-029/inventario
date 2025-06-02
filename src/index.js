@@ -1,8 +1,9 @@
 import app from "./app.js";
-const main = () =>{
-app.listen(app.get("port"));
-console.log(`the company's  Super web server is running on port ${app.get("port")}`);
 
-}
+const main = () => {
+  app.listen(app.get("port"), () => {
+    console.log(`🚀 The company's Super Web Server is running on port ${app.get("port")}`);
+  });
+};
 
 main();

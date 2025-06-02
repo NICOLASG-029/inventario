@@ -1,14 +1,15 @@
-const url = "http://localhost:5000/api/categorias"
- 
+const url = "http://localhost:5000/api/categorias";
 
-export const obtainCategories = async ()=>{
- try {
-   const resultado = await fetch(url);
-   const categorias = await resultado.json();
-   return categorias
- } catch (error) {
- console.error("error");
-
- }
-
-}
+export const obtainCategories = async () => {
+  try {
+    const resultado = await fetch(url);
+    if (!resultado.ok) {
+      throw new Error(`Error HTTP: ${resultado.status}`);
+    }
+    const categorias = await resultado.json();
+    return categorias;
+  } catch (error) {
+    console.error("Error al obtener categorías:", error.message);
+    return [];
+  }
+};
