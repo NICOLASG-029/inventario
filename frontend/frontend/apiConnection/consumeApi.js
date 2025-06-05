@@ -1,4 +1,4 @@
-const url = "http://localhost:5000/api/categorias";
+const url = "http://localhost:3306/api/categorias";
 
 export const obtainCategories = async () => {
   try {
